@@ -9,38 +9,7 @@
 
     <title>Translator simulator</title>
 
-    <script>
-        function traduzir() {
-
-            // Obter o valor do idioma selecionado
-            event.preventDefault();
-            let language = document.getElementById("language").value;
-            // Obter o valor do texto digitado
-            let text = document.getElementById("text").value;
-            // Verificar se os valores são válidos
-            if (language === "" || text === "") {
-              alert("Please fill in the fields");
-              return false;
-            }
-            let apiUrl = new URL("https://api.funtranslations.com/translate/" + language + ".json");
-            // Adicionar os parâmetros de consulta com os dados do formulário
-            apiUrl.searchParams.append("text", text);
-            // Enviar a requisição para a API e obter a resposta em formato JSON
-            fetch(apiUrl)
-              .then((response) => response.json())
-              .then((data) => {
-                // Mostrar o resultado da tradução no campo de tradução
-                document.getElementById("traducao").value = data.contents.translated;
-              })
-              .catch((error) => {
-                // Mostrar uma mensagem de erro na tela
-                document.getElementById("traducao").value = "The translation failed. Please try again later.";
-              });
-
-            
-            
-        }
-    </script>
+    
 </head>
 <body>
     <!-- Barra de navegação -->
@@ -82,13 +51,14 @@
                     <input type="text" class="form-control" id="traducao" readonly placeholder="Result">
                 </div>
 
-                <button type="submit" class="btn btn-warning" onclick="traduzir()">Translate</button>
+                <button type="submit" class="btn btn-warning">Translate</button>
             </form>
         </div>
     </div>
     <!-- Bootstrap CDN -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
 <!--
