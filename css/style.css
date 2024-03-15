@@ -1,0 +1,81 @@
+/* Estilos personalizados */
+.logo {
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: "SF Distant Galaxy";
+    position: relative;
+    transform: translateY(-200px);
+    animation: animacao-logo 1s 1s 1 alternate;
+    animation-fill-mode: forwards;
+}
+
+.conteudo {
+    position: relative;
+    transform: translateY(-1000px);
+    animation: animacao-conteudo 1s 1s 1 alternate;
+    animation-fill-mode: forwards;
+}
+
+.form-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    /* Definir uma cor de fundo com transparência */
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Reduzir a opacidade do elemento */
+    opacity: 0.8;
+    /* Aplicar um filtro de desfoque no fundo */
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-control {
+    height: 40px;
+}
+
+.btn {
+    width: 100%;
+    height: 40px;
+}
+
+body {
+    background-image: url(../imagens/espaco.jpg);
+    background-size: cover;
+}
+
+/*Fontes*/
+@font-face {
+    font-family: "SF Distant Galaxy";
+    src: url(../fontes/SFDistantGalaxy.woff);
+}
+
+/* Animação */
+@keyframes animacao-logo {
+    from {
+        top: 0px;
+    }
+    to {
+        top: 200px;
+    }
+}
+
+@keyframes animacao-conteudo {
+    from {
+        top: 0px;
+    }
+    to {
+        top: 1000px;
+    }
+}
+
+/* Estilos para telas menores */
+@media screen and (max-width: 768px) {
+    .navbar-brand {
+        display: block;
+        text-align: center;
+    }
+}
